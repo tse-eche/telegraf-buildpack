@@ -4,7 +4,7 @@ set -euo pipefail
 
 DEPS_DIR=$1
 DEPS_IDX=$2
-SRC_DIR=$3
+BUILPACK_DIR=$3
 
 VERSION="1.18.0"
 URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
@@ -36,7 +36,7 @@ if [ ! -f $InstallDir/telegraf ]; then
   # mv "$DepDir/node_exporter-${VERSION}.linux-amd64" $InstallDir
   # rm /tmp/module.tar.gz
 
-  mv "$SRC_DIR/telegraf" $InstallDir
+  mv "$BUILPACK_DIR/src/telegraf" $InstallDir
   
   mkdir -p "$DepDir/bin"
   cd $DepDir/bin;
