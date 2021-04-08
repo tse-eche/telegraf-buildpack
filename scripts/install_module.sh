@@ -42,12 +42,9 @@ if [ ! -f $InstallDir/telegraf ]; then
   cd $DepDir/bin;
   ln -s "../telegraf/telegraf" "./telegraf" 
 
-  ls -ls $DepDir/bin
-  ls -ls $InstallDir/telegraf
-
 fi
 
-if [ ! -f $InstallDir/node_exporter ]; then
-  echo "       **ERROR** Could not download node_exporter"
+if [ ! -f $InstallDir/telegraf ]; then
+  echo "       **ERROR** Could not download telegraf"
   exit 1
 fi
