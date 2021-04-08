@@ -20,7 +20,7 @@ getGraphitePort()
 GRAPHITE_URL=$(getGraphiteUrl)
 GRAPHITE_PORT=$(getGraphitePort)
 
-if [ ($GRAPHITE_URL == "null" -o $GRAPHITE_URL == "") -o ($GRAPHITE_PORT == "null" -o $GRAPHITE_PORT == "")]; then
+if [ ( $GRAPHITE_URL == "null" -o $GRAPHITE_URL == "" ) -o ( $GRAPHITE_PORT == "null" -o $GRAPHITE_PORT == "" ) ]; then
   echo "       **ERROR** No Graphite configuration found in Services!"
   echo "                 Please add the a9s_Prometheus Service to use this buildpack!"
   exit 1
