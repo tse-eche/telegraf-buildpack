@@ -1,0 +1,9 @@
+---
+language: binary
+name: telegraf-buildpack
+include_files:
+- CHANGELOG
+- README.md
+- VERSION
+- bin/supply
+- manifest.yml
