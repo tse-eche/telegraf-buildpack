@@ -26,7 +26,7 @@ if [ ! -f $InstallDir/jq-linux64 ]; then
   echo "-----> Download jq ${VERSION}"
   curl -s -L --retry 15 --retry-delay 2 $URL -o $InstallDir/jq-linux64
 
-  DOWNLOAD_SHA256=$(shasum -a 256 /tmp/module.tar.gz | cut -d ' ' -f 1)
+  DOWNLOAD_SHA256=$(shasum -a 256 $InstallDir/jq-linux64 | cut -d ' ' -f 1)
   echo "-----> SHA: ${DOWNLOAD_SHA256}"
 #   if [[ $DOWNLOAD_SHA256 != $SHA256 ]]; then
 #     echo "       **ERROR** SHA256 mismatch: got $DOWNLOAD_SHA256 expected $SHA256"
