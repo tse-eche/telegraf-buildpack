@@ -9,8 +9,7 @@ TELEGRAF_CONF_FILE=$DEPS_DIR/$DEPS_IDX/telegraf/telegraf.conf
 
 getGraphiteUrl()
 {
-    echo "null";
-    #echo $(echo $VCAP_SERVICES | jq -r '."a9s-prometheus"[0].credentials."graphite_exporters"[0]')
+    echo $(echo $VCAP_SERVICES | jq -r '."a9s-prometheus"[0].credentials."graphite_exporters"[0]')
 }
 
 getGraphitePort()
@@ -21,7 +20,7 @@ getGraphitePort()
 GRAPHITE_URL=$(getGraphiteUrl)
 GRAPHITE_PORT=$(getGraphitePort)
 
-if [ GRAPHITE_URL == "null" ]; then
+if [ ${GRAPHITE_URL} == "null" ]; then
   echo "       **ERROR** No Graphite configuration found in Services!"
   echo "                 Please add the a9s_Prometheus Service to use this buildpack!"
   exit 1
