@@ -4,7 +4,6 @@ set -euo pipefail
 
 DEPS_DIR=$1
 DEPS_IDX=$2
-BUILPACK_DIR=$3
 
 VERSION="1.18.0"
 URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
