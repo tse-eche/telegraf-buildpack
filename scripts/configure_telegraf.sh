@@ -30,17 +30,17 @@ sed -i 's/localhost:2003/'$GRAPHITE_URL':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 
 echo "GraphiteURL $GRAPHITE_URL:$GRAPHITE_PORT!"
 
-if [ -z $PROM_HOST ]; 
+if if [ -z ${PROM_HOST+x} ]; 
 then 
   export PROM_HOST="localhost"
 fi
 
-if [ -z $PROM_PORT ]; 
+if [ -z ${PROM_PORT+x}  ]; 
 then 
   export PROM_PORT=9100
 fi
 
-if [ -z $PROM_PATH ]; 
+if [ -z ${PROM_PORT+x}  ]; 
 then 
   export PROM_PATH="metrics"
 fi
