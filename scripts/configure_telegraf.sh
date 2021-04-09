@@ -47,4 +47,6 @@ fi
 
 sed -i 's/"localhost:9100/metrics"/"'$PROM_HOST':'$PROM_PORT'/'$PROM_PATH'"/' $TELEGRAF_CONF_FILE
 
+echo "PrometheusURL $PROM_HOST:$PROM_PORT/$PROM_PATH!"
+
 # cat $TELEGRAF_CONF_FILE
