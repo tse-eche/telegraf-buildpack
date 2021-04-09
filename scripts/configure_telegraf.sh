@@ -5,6 +5,8 @@ set -euo pipefail
 DEPS_DIR=$1
 DEPS_IDX=$2
 
+echo "-----> Configuring telegraf"
+
 TELEGRAF_CONF_FILE=$DEPS_DIR/$DEPS_IDX/telegraf/telegraf.conf
 
 getGraphiteUrl()
@@ -28,7 +30,7 @@ fi
 
 sed -i 's/localhost:2003/'$GRAPHITE_URL':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 
-echo "GraphiteURL $GRAPHITE_URL:$GRAPHITE_PORT!"
+echo "-----> GraphiteURL: '$GRAPHITE_URL:$GRAPHITE_PORT'"
 
 if [ -z ${PROM_HOST+x} ]; 
 then 
@@ -45,8 +47,8 @@ then
   export PROM_PATH="metrics"
 fi
 
-sed -i 's/localhost:9100\/metrics/"'$PROM_HOST':'$PROM_PORT'\/'$PROM_PATH'"/' $TELEGRAF_CONF_FILE
+sed -i 's/localhost:9100\/metrics/'$PROM_HOST':'$PROM_PORT'\/'$PROM_PATH'/' $TELEGRAF_CONF_FILE
 
-echo "PrometheusURL $PROM_HOST:$PROM_PORT/'$PROM_PATH'!"
+echo "-----> Prometheus-URL: '$PROM_HOST:$PROM_PORT/$PROM_PATH'"
 
 # cat $TELEGRAF_CONF_FILE
