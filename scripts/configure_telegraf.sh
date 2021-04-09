@@ -40,7 +40,7 @@ then
   export PROM_PORT=9100
 fi
 
-if [ -z ${PROM_PORT+x}  ]; 
+if [ -z ${PROM_PATH+x}  ]; 
 then 
   export PROM_PATH="metrics"
 fi
