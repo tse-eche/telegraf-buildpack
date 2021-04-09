@@ -45,6 +45,8 @@ fi
 if [ -z ${PROM_PATH+x}  ]; 
 then 
   export PROM_PATH="metrics"
+else
+  PROM_PATH="$(echo $PROM_PATH | sed 's/\//\\//g')"
 fi
 
 sed -i 's/localhost:9100\/metrics/'$PROM_HOST':'$PROM_PORT'\/'$PROM_PATH'/' $TELEGRAF_CONF_FILE
