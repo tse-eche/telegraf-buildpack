@@ -35,7 +35,7 @@ if [ ! -f $InstallDir/telegraf ]; then
   # mv "$DepDir/node_exporter-${VERSION}.linux-amd64" $InstallDir
   # rm /tmp/module.tar.gz
 
-  mv "$BUILPACK_DIR/src/telegraf" $InstallDir
+  mv "$BUILDPACK_DIR/src/telegraf" $InstallDir
   
   mkdir -p "$DepDir/bin"
   cd $DepDir/bin;
