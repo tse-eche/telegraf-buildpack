@@ -19,33 +19,33 @@ getGraphitePort()
     echo $(echo $VCAP_SERVICES | jq '."a9s-prometheus"[0].credentials."graphite_exporter_port"')
 }
 
-GRAPHITE_URL=$(getGraphiteUrl)
-GRAPHITE_PORT=$(getGraphitePort)
+# GRAPHITE_URL=$(getGraphiteUrl)
+# GRAPHITE_PORT=$(getGraphitePort)
 
-if [ ${GRAPHITE_URL} == "null" ]; then
-  echo "       **ERROR** No Graphite configuration found in Services!"
-  echo "                 Please add the a9s_Prometheus Service to use this buildpack!"
-  exit 1
-fi
+# if [ ${GRAPHITE_URL} == "null" ]; then
+#   echo "       **ERROR** No Graphite configuration found in Services!"
+#   echo "                 Please add the a9s_Prometheus Service to use this buildpack!"
+#   exit 1
+# fi
 
-sed -i 's/localhost:2003/'$GRAPHITE_URL':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
+# sed -i 's/localhost:2003/'$GRAPHITE_URL':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 
-echo "-----> GraphiteURL: '$GRAPHITE_URL:$GRAPHITE_PORT'"
+# echo "-----> GraphiteURL: '$GRAPHITE_URL:$GRAPHITE_PORT'"
 
-if [ -z ${PROM_HOST+x} ]; 
-then 
-  export PROM_HOST="localhost"
-fi
+# if [ -z ${PROM_HOST+x} ]; 
+# then 
+#   export PROM_HOST="localhost"
+# fi
 
-if [ -z ${PROM_PORT+x}  ]; 
-then 
-  export PROM_PORT=9100
-fi
+# if [ -z ${PROM_PORT+x}  ]; 
+# then 
+#   export PROM_PORT=9100
+# fi
 
-if [ -z ${PROM_PATH+x}  ]; 
-then 
-  export PROM_PATH="metrics"
-fi
+# if [ -z ${PROM_PATH+x}  ]; 
+# then 
+#   export PROM_PATH="metrics"
+# fi
 
 sed -i 's|localhost:9100/metrics|'$PROM_HOST':'$PROM_PORT'/'$PROM_PATH'|' $TELEGRAF_CONF_FILE
 
