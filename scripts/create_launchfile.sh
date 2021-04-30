@@ -11,7 +11,7 @@ processes:
   command: "telegraf --config /home/vcap/deps/'$DEPS_IDX'/telegraf/telegraf.conf"
   platforms:
     cloudfoundry:
-      sidecar_for: [ "web"]
+      
 '
 
 echo "-----> Create launch file"
