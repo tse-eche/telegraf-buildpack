@@ -26,3 +26,6 @@ To add that Buildpack to your application, add the following lines to your manif
 ```
 
 ATTENTION, if you are not useing a custom command in your manifest file, its neccessary, to have the application buildpack as last in the buildpacks list, because thats will create the startup command.
+
+## Grafana
+The `Grafana_Dashboard.json` inherits and Dashboard-Template for Grafana in Json-Fromat which can be used to start an Dashboard in Grafana.
