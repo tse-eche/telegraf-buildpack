@@ -1,1471 +1,1485 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": "-- Grafana --",
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "gnetId": null,
-    "graphTooltip": 1,
-    "iteration": 1620286498711,
-    "links": [
-    ],
-    "panels": [
+  "annotations": {
+    "list": [
       {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "default",
-        "decimals": 2,
-        "description": "Total RootFS",
-        "format": "bytes",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 4,
-          "x": 0,
-          "y": 0
-        },
-        "id": 24,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "disk_total{instance=\"$instance\",host=\"$host\",path=\"/\"}",
-            "format": "time_series",
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "title": "RootFS Total",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "avg"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "default",
-        "decimals": 2,
-        "description": "Total RAM",
-        "format": "bytes",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 4,
-          "x": 4,
-          "y": 0
-        },
-        "id": 22,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "cgroup_memory_limit_in_bytes{instance=\"$instance\",host=\"$host\"}",
-            "format": "time_series",
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "title": "RAM Total",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "avg"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "default",
-        "description": "Total number of CPU cores",
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 3,
-          "w": 4,
-          "x": 8,
-          "y": 0
-        },
-        "id": 18,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "system_n_cpus{instance=\"$instance\",host=\"$host\"}",
-            "format": "time_series",
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "title": "CPU Cores",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "avg"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": true,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "default",
-        "decimals": 1,
-        "format": "percent",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": true,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 0,
-          "y": 3
-        },
-        "id": 2,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "70%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "disk_used_percent{instance=\"$instance\",host=\"$host\", path=\"/\"}",
-            "format": "time_series",
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": "70,90",
-        "title": "Disk Used",
-        "type": "singlestat",
-        "valueFontSize": "70%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": true,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "default",
-        "decimals": 1,
-        "format": "percent",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": true,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 4,
-          "y": 3
-        },
-        "id": 3,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "70%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "cgroup_memory_usage_in_bytes{instance=\"$instance\",host=\"$host\"} / cgroup_memory_limit_in_bytes{instance=\"$instance\",host=\"$host\"} * 100",
-            "format": "time_series",
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": "70,90",
-        "title": "Memory Used",
-        "type": "singlestat",
-        "valueFontSize": "70%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": true,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "default",
-        "decimals": 2,
-        "format": "percent",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": true,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 5,
-          "w": 4,
-          "x": 8,
-          "y": 3
-        },
-        "id": 4,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "70%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "(cpu_usage_system{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"})",
-            "format": "time_series",
-            "hide": false,
-            "instant": true,
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": "70,90",
-        "title": "CPU Used",
-        "type": "singlestat",
-        "valueFontSize": "70%",
-        "valueMaps": [
-          {
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "current"
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "default",
-        "decimals": null,
-        "fill": 1,
-        "gridPos": {
-          "h": 9,
-          "w": 12,
-          "x": 0,
-          "y": 8
-        },
-        "id": 16,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": false,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
-        "percentage": false,
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "cpu_usage_system{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"}",
-            "format": "time_series",
-            "intervalFactor": 1,
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "CPU Usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "decimals": 2,
-            "format": "percent",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 17
-        },
-        "id": 10,
-        "panels": [
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "default",
-            "fill": 1,
-            "gridPos": {
-              "h": 12,
-              "w": 24,
-              "x": 0,
-              "y": 6
-            },
-            "id": 6,
-            "legend": {
-              "alignAsTable": true,
-              "avg": false,
-              "current": false,
-              "max": true,
-              "min": true,
-              "rightSide": true,
-              "show": true,
-              "sideWidth": 350,
-              "total": true,
-              "values": true
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "irate(net_ip_defaultttl{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "DefaultTTL",
-                "refId": "A",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_forwarding{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "Forwarding",
-                "refId": "B",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_forwdatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "ForwDatagrams",
-                "refId": "C",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_fragcreates{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "FragCreates",
-                "refId": "D",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_fragfails{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "FragFails",
-                "refId": "E",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_fragoks{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "FragOKs",
-                "refId": "F",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_inaddrerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InAddrErrors",
-                "refId": "G",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_indelivers{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InDelivers",
-                "refId": "H",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_indiscards{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InDiscards",
-                "refId": "I",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_inhdrerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InHdrErrors",
-                "refId": "J",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_inreceives{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InReceives",
-                "refId": "K",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_inunknownprotos{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InUnknownProtos",
-                "refId": "L",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_outdiscards{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 1,
-                "legendFormat": "OutDiscards",
-                "refId": "S"
-              },
-              {
-                "expr": "irate(net_ip_outnoroutes{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "OutNoRoutes",
-                "refId": "M",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_outrequests{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "OutRequests",
-                "refId": "N",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_reasmfails{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "ReasmFails",
-                "refId": "O",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_reasmoks{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "ReasmOKs",
-                "refId": "P",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_reasmreqds{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "ReasmReqds",
-                "refId": "Q",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_ip_reasmtimeout{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "ReasmTimeout",
-                "refId": "R",
-                "step": 2,
-                "target": ""
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "IP",
-            "tooltip": {
-              "shared": true,
-              "sort": 2,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "none",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "default",
-            "fill": 1,
-            "gridPos": {
-              "h": 10,
-              "w": 24,
-              "x": 0,
-              "y": 18
-            },
-            "id": 8,
-            "legend": {
-              "alignAsTable": true,
-              "avg": false,
-              "current": false,
-              "max": true,
-              "min": true,
-              "rightSide": true,
-              "show": true,
-              "sideWidth": 350,
-              "total": true,
-              "values": true
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "irate(net_tcp_activeopens{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "ActiveOpens",
-                "refId": "A",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_attemptfails{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "AttemptFails",
-                "refId": "B",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_currestab{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "CurrEstab",
-                "refId": "C",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_estabresets{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "EstabResets",
-                "refId": "D",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_incsumerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InCsumErros",
-                "refId": "E",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_inerrs{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InErrs",
-                "refId": "F",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_insegs{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InSegs",
-                "refId": "G",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_maxconn{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "MaxConn",
-                "refId": "H",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_outrsts{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "OutRsts",
-                "refId": "I",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_outsegs{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "OutSegs",
-                "refId": "J",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_passiveopens{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "PassiveOpens",
-                "refId": "K",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_retranssegs{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "RetransSegs",
-                "refId": "L",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_rtoalgorithm{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "RtoAlgorithm",
-                "refId": "M",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_rtomax{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "RtoMax",
-                "refId": "N",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_tcp_rtomin{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "RtoMin",
-                "refId": "O",
-                "step": 2,
-                "target": ""
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "TCP",
-            "tooltip": {
-              "shared": true,
-              "sort": 2,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "none",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "default",
-            "decimals": 0,
-            "fill": 1,
-            "gridPos": {
-              "h": 7,
-              "w": 24,
-              "x": 0,
-              "y": 28
-            },
-            "id": 12,
-            "legend": {
-              "alignAsTable": true,
-              "avg": false,
-              "current": false,
-              "max": true,
-              "min": true,
-              "rightSide": true,
-              "show": true,
-              "sideWidth": 350,
-              "total": true,
-              "values": true
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "irate(net_udp_ignoredmulti{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "IgnoredMulti",
-                "refId": "A",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_incsumerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InCsumErrors",
-                "refId": "B",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_indatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InDatagrams",
-                "refId": "C",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_inerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InErrors",
-                "refId": "D",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_noports{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "NoPorts",
-                "refId": "E",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_outdatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "OutDatagrams",
-                "refId": "F",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_rcvbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "RcvbufErrors",
-                "refId": "G",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udp_sndbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "SndbufErrors",
-                "refId": "H",
-                "step": 2,
-                "target": ""
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "UDP",
-            "tooltip": {
-              "shared": true,
-              "sort": 2,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "none",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "default",
-            "decimals": 0,
-            "fill": 1,
-            "gridPos": {
-              "h": 7,
-              "w": 24,
-              "x": 0,
-              "y": 35
-            },
-            "id": 14,
-            "legend": {
-              "alignAsTable": true,
-              "avg": false,
-              "current": false,
-              "max": true,
-              "min": true,
-              "rightSide": true,
-              "show": true,
-              "sideWidth": 350,
-              "total": true,
-              "values": true
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "expr": "irate(net_udplite_ignoredmulti{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "IgnoredMulti",
-                "refId": "A",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_incsumerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InCsumErrors",
-                "refId": "B",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_indatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InDatagrams",
-                "refId": "C",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_inerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "InErrors",
-                "refId": "D",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_noports{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "NoPorts",
-                "refId": "E",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_outdatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "OutDatagrams",
-                "refId": "F",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_rcvbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "RcvbufErrors",
-                "refId": "G",
-                "step": 2,
-                "target": ""
-              },
-              {
-                "expr": "irate(net_udplite_sndbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
-                "format": "time_series",
-                "intervalFactor": 2,
-                "legendFormat": "SndbufErrors",
-                "refId": "H",
-                "step": 2,
-                "target": ""
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "UDP LITE",
-            "tooltip": {
-              "shared": true,
-              "sort": 2,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "none",
-                "label": "",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ],
-            "yaxis": {
-              "align": false,
-              "alignLevel": null
-            }
-          }
-        ],
-        "title": "Network",
-        "type": "row"
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
       }
-    ],
-    "refresh": "5s",
-    "schemaVersion": 16,
-    "style": "dark",
-    "tags": [
-      "container_monitoring"
-    ],
-    "templating": {
-      "list": [
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "id": 50,
+  "iteration": 1620288689654,
+  "links": [
+  ],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 26,
+      "panels": [],
+      "title": "General Information",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "default",
+      "decimals": 2,
+      "description": "Total RootFS",
+      "format": "bytes",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 24,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
         {
-          "allValue": null,
-          "datasource": "default",
-          "definition": "label_values(instance)",
-          "hide": 0,
-          "includeAll": false,
-          "label": "Instance",
-          "multi": false,
-          "name": "instance",
-          "options": [],
-          "query": "label_values(instance)",
-          "refresh": 1,
-          "regex": "",
-          "skipUrlSync": false,
-          "sort": 1,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
+          "name": "value to text",
+          "value": 1
         },
         {
-          "allValue": null,
-          "datasource": "default",
-          "definition": "label_values({instance=\"$instance\"},host)",
-          "hide": 0,
-          "includeAll": false,
-          "label": "Host",
-          "multi": false,
-          "name": "host",
-          "options": [],
-          "query": "label_values({instance=\"$instance\"},host)",
-          "refresh": 1,
-          "regex": "",
-          "skipUrlSync": false,
-          "sort": 1,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
+          "name": "range to text",
+          "value": 2
         }
-      ]
-    },
-    "time": {
-      "from": "now-6h",
-      "to": "now"
-    },
-    "timepicker": {
-      "refresh_intervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
       ],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
-      ]
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "disk_total{instance=\"$instance\",host=\"$host\",path=\"/\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "RootFS Total",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
     },
-    "timezone": "",
-    "title": "Container Monitor",
-    "version": 1
-  }
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "default",
+      "decimals": 2,
+      "description": "Total RAM",
+      "format": "bytes",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 1
+      },
+      "id": 22,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "cgroup_memory_limit_in_bytes{instance=\"$instance\",host=\"$host\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "RAM Total",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "default",
+      "description": "Total number of CPU cores",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 8,
+        "y": 1
+      },
+      "id": 18,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "count(cpu_usage_system{instance=\"$instance\",host=\"$host\"}) - 1",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "CPU Cores",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "default",
+      "decimals": 1,
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 0,
+        "y": 4
+      },
+      "id": 2,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "70%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "disk_used_percent{instance=\"$instance\",host=\"$host\", path=\"/\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,90",
+      "title": "Disk Used",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "default",
+      "decimals": 1,
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 4,
+        "y": 4
+      },
+      "id": 3,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "70%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "cgroup_memory_usage_in_bytes{instance=\"$instance\",host=\"$host\"} / cgroup_memory_limit_in_bytes{instance=\"$instance\",host=\"$host\"} * 100",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,90",
+      "title": "Memory Used",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "default",
+      "decimals": 2,
+      "format": "percent",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 8,
+        "y": 4
+      },
+      "id": 4,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "70%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "(cpu_usage_system{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"})",
+          "format": "time_series",
+          "hide": false,
+          "instant": true,
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "70,90",
+      "title": "CPU Used",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "default",
+      "decimals": null,
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "cpu_usage_system{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "CPU Usage",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": 2,
+          "format": "percent",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 10,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "default",
+          "fill": 1,
+          "gridPos": {
+            "h": 12,
+            "w": 24,
+            "x": 0,
+            "y": 6
+          },
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": 350,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(net_ip_defaultttl{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "DefaultTTL",
+              "refId": "A",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_forwarding{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "Forwarding",
+              "refId": "B",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_forwdatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ForwDatagrams",
+              "refId": "C",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_fragcreates{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "FragCreates",
+              "refId": "D",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_fragfails{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "FragFails",
+              "refId": "E",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_fragoks{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "FragOKs",
+              "refId": "F",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_inaddrerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InAddrErrors",
+              "refId": "G",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_indelivers{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InDelivers",
+              "refId": "H",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_indiscards{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InDiscards",
+              "refId": "I",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_inhdrerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InHdrErrors",
+              "refId": "J",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_inreceives{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InReceives",
+              "refId": "K",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_inunknownprotos{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InUnknownProtos",
+              "refId": "L",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_outdiscards{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "OutDiscards",
+              "refId": "S"
+            },
+            {
+              "expr": "irate(net_ip_outnoroutes{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "OutNoRoutes",
+              "refId": "M",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_outrequests{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "OutRequests",
+              "refId": "N",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_reasmfails{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ReasmFails",
+              "refId": "O",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_reasmoks{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ReasmOKs",
+              "refId": "P",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_reasmreqds{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ReasmReqds",
+              "refId": "Q",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_ip_reasmtimeout{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ReasmTimeout",
+              "refId": "R",
+              "step": 2,
+              "target": ""
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "IP",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "default",
+          "fill": 1,
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 18
+          },
+          "id": 8,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": 350,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(net_tcp_activeopens{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "ActiveOpens",
+              "refId": "A",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_attemptfails{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "AttemptFails",
+              "refId": "B",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_currestab{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "CurrEstab",
+              "refId": "C",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_estabresets{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "EstabResets",
+              "refId": "D",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_incsumerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InCsumErros",
+              "refId": "E",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_inerrs{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InErrs",
+              "refId": "F",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_insegs{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InSegs",
+              "refId": "G",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_maxconn{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "MaxConn",
+              "refId": "H",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_outrsts{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "OutRsts",
+              "refId": "I",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_outsegs{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "OutSegs",
+              "refId": "J",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_passiveopens{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "PassiveOpens",
+              "refId": "K",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_retranssegs{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "RetransSegs",
+              "refId": "L",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_rtoalgorithm{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "RtoAlgorithm",
+              "refId": "M",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_rtomax{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "RtoMax",
+              "refId": "N",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_tcp_rtomin{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "RtoMin",
+              "refId": "O",
+              "step": 2,
+              "target": ""
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "TCP",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "default",
+          "decimals": 0,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 28
+          },
+          "id": 12,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": 350,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(net_udp_ignoredmulti{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "IgnoredMulti",
+              "refId": "A",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_incsumerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InCsumErrors",
+              "refId": "B",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_indatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InDatagrams",
+              "refId": "C",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_inerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InErrors",
+              "refId": "D",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_noports{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "NoPorts",
+              "refId": "E",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_outdatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "OutDatagrams",
+              "refId": "F",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_rcvbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "RcvbufErrors",
+              "refId": "G",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udp_sndbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "SndbufErrors",
+              "refId": "H",
+              "step": 2,
+              "target": ""
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "UDP",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "default",
+          "decimals": 0,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 35
+          },
+          "id": 14,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sideWidth": 350,
+            "total": true,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "irate(net_udplite_ignoredmulti{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "IgnoredMulti",
+              "refId": "A",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_incsumerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InCsumErrors",
+              "refId": "B",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_indatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InDatagrams",
+              "refId": "C",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_inerrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "InErrors",
+              "refId": "D",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_noports{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "NoPorts",
+              "refId": "E",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_outdatagrams{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "OutDatagrams",
+              "refId": "F",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_rcvbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "RcvbufErrors",
+              "refId": "G",
+              "step": 2,
+              "target": ""
+            },
+            {
+              "expr": "irate(net_udplite_sndbuferrors{instance=~\"$instance\",host=~\"$host\"}[5m])",
+              "format": "time_series",
+              "intervalFactor": 2,
+              "legendFormat": "SndbufErrors",
+              "refId": "H",
+              "step": 2,
+              "target": ""
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "UDP LITE",
+          "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Network",
+      "type": "row"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 16,
+  "style": "dark",
+  "tags": [
+    "containermon"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "datasource": "default",
+        "definition": "label_values(instance)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Instance",
+        "multi": false,
+        "name": "instance",
+        "options": [],
+        "query": "label_values(instance)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "datasource": "default",
+        "definition": "label_values({instance=\"$instance\"},host)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Host",
+        "multi": false,
+        "name": "host",
+        "options": [],
+        "query": "label_values({instance=\"$instance\"},host)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Container Monitor",
+  "version": 1
+}
