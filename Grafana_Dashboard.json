@@ -1,4 +1,34 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_PROMETHEUS",
+      "label": "prometheus",
+      "description": "Prometheus data source",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "5.4.5"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -16,8 +46,15 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 50,
-  "iteration": 1620288689654,
+  "iteration": 1620326515431,
   "links": [
+    {
+      "icon": "external link",
+      "tags": [
+        "overview"
+      ],
+      "type": "dashboards"
+    }
   ],
   "panels": [
     {
@@ -42,7 +79,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "default",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Total RootFS",
       "format": "bytes",
@@ -124,7 +161,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "default",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "description": "Total RAM",
       "format": "bytes",
@@ -206,7 +243,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "default",
+      "datasource": "${DS_PROMETHEUS}",
       "description": "Total number of CPU cores",
       "format": "none",
       "gauge": {
@@ -287,7 +324,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "default",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "format": "percent",
       "gauge": {
@@ -368,7 +405,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "default",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 1,
       "format": "percent",
       "gauge": {
@@ -449,7 +486,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "default",
+      "datasource": "${DS_PROMETHEUS}",
       "decimals": 2,
       "format": "percent",
       "gauge": {
@@ -524,90 +561,274 @@
       "valueName": "current"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "default",
-      "decimals": null,
-      "fill": 1,
+      "collapsed": true,
       "gridPos": {
-        "h": 9,
-        "w": 12,
+        "h": 1,
+        "w": 24,
         "x": 0,
         "y": 9
       },
-      "id": 16,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
+      "id": 28,
+      "panels": [
         {
-          "expr": "cpu_usage_system{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "CPU Usage",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 2,
-          "format": "percent",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 0,
+            "y": 10
+          },
+          "id": 38,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "disk_used_percent{instance=\"$instance\",host=\"$host\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Disk Usage",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 1,
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
         },
         {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "fill": 1,
+          "gridPos": {
+            "h": 6,
+            "w": 12,
+            "x": 12,
+            "y": 10
+          },
+          "id": 40,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cgroup_memory_usage_in_bytes{instance=\"$instance\",host=\"$host\"} / cgroup_memory_limit_in_bytes{instance=\"$instance\",host=\"$host\"} * 100",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Memory Usage",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 1,
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "decimals": null,
+          "fill": 1,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 16
+          },
+          "id": 16,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "cpu_usage_system{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",instance=\"$instance\",cpu=\"cpu-total\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "CPU Usage",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 2,
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
         }
       ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "title": "Detailed Information",
+      "type": "row"
     },
     {
       "collapsed": true,
@@ -615,7 +836,469 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 10
+      },
+      "id": 30,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "description": "Response Time of port 8080",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 11
+          },
+          "id": 32,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "net_response_response_time{host=\"$host\", instance=\"$instance\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "refId": "A"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Response Time",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "s",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "decimals": 0,
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 11
+          },
+          "id": 44,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "(netstat_tcp_close{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP close",
+              "refId": "A"
+            },
+            {
+              "expr": "(netstat_tcp_close_wait{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP close wait",
+              "refId": "B"
+            },
+            {
+              "expr": "(netstat_tcp_closing{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP closing",
+              "refId": "C"
+            },
+            {
+              "expr": "(netstat_tcp_established{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP established",
+              "refId": "D"
+            },
+            {
+              "expr": "(netstat_tcp_fin_wait1{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP fin wait1",
+              "refId": "E"
+            },
+            {
+              "expr": "(netstat_tcp_fin_wait2{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP fin wait2",
+              "refId": "F"
+            },
+            {
+              "expr": "(netstat_tcp_last_ack{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP last ack",
+              "refId": "G"
+            },
+            {
+              "expr": "(netstat_tcp_listen{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP listen",
+              "refId": "H"
+            },
+            {
+              "expr": "(netstat_tcp_none{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP none",
+              "refId": "I"
+            },
+            {
+              "expr": "(netstat_tcp_syn_recv{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP syn recv",
+              "refId": "J"
+            },
+            {
+              "expr": "(netstat_tcp_syn_sent{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP syn sent",
+              "refId": "K"
+            },
+            {
+              "expr": "(netstat_tcp_time_wait{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "TCP time wait",
+              "refId": "L"
+            },
+            {
+              "expr": "(netstat_udp_socket{instance=\"$instance\", host=\"$host\"})",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "UDP socket",
+              "refId": "M"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Socket Connection States",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "decimals": 0,
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "description": "Overview of Send and Received Packages in absolut values",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 20
+          },
+          "id": 34,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "net_packets_sent{host=\"$host\",instance=\"$instance\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Packages Send",
+              "refId": "A"
+            },
+            {
+              "expr": "net_packets_recv{host=\"$host\",instance=\"$instance\"} * - 1",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Packages Received",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Packages Send / Received",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "description": "Overview of Send and Received Bytes in absolut values",
+          "fill": 1,
+          "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 20
+          },
+          "id": 42,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "net_bytes_sent{instance=\"$instance\",host=\"$host\"}",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Bytes Send",
+              "refId": "A"
+            },
+            {
+              "expr": "net_bytes_recv{instance=\"$instance\",host=\"$host\"} * -1",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Bytes Received",
+              "refId": "B"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Bytes Send / Received",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Network Overview",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 11
       },
       "id": 10,
       "panels": [
@@ -624,7 +1307,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "default",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 1,
           "gridPos": {
             "h": 12,
@@ -874,7 +1557,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "default",
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 1,
           "gridPos": {
             "h": 10,
@@ -1090,7 +1773,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "default",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 0,
           "fill": 1,
           "gridPos": {
@@ -1244,7 +1927,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "default",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 0,
           "fill": 1,
           "gridPos": {
@@ -1394,11 +2077,11 @@
           }
         }
       ],
-      "title": "Network",
+      "title": "Detailed Network",
       "type": "row"
     }
   ],
-  "refresh": "5s",
+  "refresh": false,
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -1408,7 +2091,11 @@
     "list": [
       {
         "allValue": null,
-        "datasource": "default",
+        "current": {
+          "text": "int-aws-connector.apps.internal:9100",
+          "value": "int-aws-connector.apps.internal:9100"
+        },
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(instance)",
         "hide": 0,
         "includeAll": false,
@@ -1429,7 +2116,11 @@
       },
       {
         "allValue": null,
-        "datasource": "default",
+        "current": {
+          "text": "cfa52302-ba5f-4d0a-5db8-73df",
+          "value": "cfa52302-ba5f-4d0a-5db8-73df"
+        },
+        "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values({instance=\"$instance\"},host)",
         "hide": 0,
         "includeAll": false,
@@ -1442,6 +2133,32 @@
         "regex": "",
         "skipUrlSync": false,
         "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "isNone": true,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "system_n_cpus{host=\"$host\",instance=\"$instance\"}",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "cpu_count",
+        "options": [],
+        "query": "system_n_cpus{host=\"$host\",instance=\"$instance\"}",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
@@ -1481,5 +2198,6 @@
   },
   "timezone": "",
   "title": "Container Monitor",
-  "version": 1
+  "uid": "gfEnra9Gk",
+  "version": 45
 }
