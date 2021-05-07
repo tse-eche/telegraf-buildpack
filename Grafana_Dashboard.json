@@ -45,17 +45,9 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "id": 50,
-  "iteration": 1620326515431,
-  "links": [
-    {
-      "icon": "external link",
-      "tags": [
-        "overview"
-      ],
-      "type": "dashboards"
-    }
-  ],
+  "id": 52,
+  "iteration": 1620374344502,
+  
   "panels": [
     {
       "collapsed": false,
@@ -244,8 +236,7 @@
         "#d44a3a"
       ],
       "datasource": "${DS_PROMETHEUS}",
-      "description": "Total number of CPU cores",
-      "format": "none",
+      "format": "s",
       "gauge": {
         "maxValue": 100,
         "minValue": 0,
@@ -257,6 +248,87 @@
         "h": 3,
         "w": 4,
         "x": 8,
+        "y": 1
+      },
+      "id": 46,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "time() - process_start_time_seconds{host=\"cbff613c-8303-4b37-6824-c698\", instance=\"int-aws-connector.apps.internal:9100\"}",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Uptime",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "description": "Total number of CPU cores",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 12,
         "y": 1
       },
       "id": 18,
@@ -336,7 +408,7 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 4,
+        "w": 5,
         "x": 0,
         "y": 4
       },
@@ -417,8 +489,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 4,
-        "x": 4,
+        "w": 5,
+        "x": 5,
         "y": 4
       },
       "id": 3,
@@ -498,8 +570,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 4,
-        "x": 8,
+        "w": 5,
+        "x": 10,
         "y": 4
       },
       "id": 4,
@@ -2081,7 +2153,7 @@
       "type": "row"
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -2091,10 +2163,6 @@
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "int-aws-connector.apps.internal:9100",
-          "value": "int-aws-connector.apps.internal:9100"
-        },
         "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values(instance)",
         "hide": 0,
@@ -2116,10 +2184,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "text": "cfa52302-ba5f-4d0a-5db8-73df",
-          "value": "cfa52302-ba5f-4d0a-5db8-73df"
-        },
         "datasource": "${DS_PROMETHEUS}",
         "definition": "label_values({instance=\"$instance\"},host)",
         "hide": 0,
@@ -2133,32 +2197,6 @@
         "regex": "",
         "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "isNone": true,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": "${DS_PROMETHEUS}",
-        "definition": "system_n_cpus{host=\"$host\",instance=\"$instance\"}",
-        "hide": 2,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "cpu_count",
-        "options": [],
-        "query": "system_n_cpus{host=\"$host\",instance=\"$instance\"}",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
         "tagsQuery": "",
@@ -2198,6 +2236,5 @@
   },
   "timezone": "",
   "title": "Container Monitor",
-  "uid": "gfEnra9Gk",
-  "version": 45
+  "version": 1
 }
