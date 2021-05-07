@@ -287,7 +287,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "time() - process_start_time_seconds{host=\"cbff613c-8303-4b37-6824-c698\", instance=\"int-aws-connector.apps.internal:9100\"}",
+          "expr": "time() - process_start_time_seconds{instance=\"int-aws-connector.apps.internal:9100\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A"

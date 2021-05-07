@@ -1,1 +1,5 @@
-V0.8.0 First Beta release of the Telegraf-Sidecar
+V0.8.2  Change configuration to support more metrics informations
+        Add Telegraf Licence
+        Remove jq-binaries
+
+V0.8.0  First Beta release of the Telegraf-Sidecar
