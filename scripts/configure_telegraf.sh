@@ -54,7 +54,7 @@ sed -i 's/localhost:2003/'$GRAPHITE_HOST':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 echo "-----> GraphiteURL: '$GRAPHITE_HOST:$GRAPHITE_PORT'"
 
 
-if [ [-v ${NO_PROM}] -a [${NO_PROM} == "true"]]; 
+if [ (! -z ${NO_PROM+x}) -a (${NO_PROM} == "true")]; 
 then 
 
   sed -i 's|[[inputs.prometheus]]|# [[inputs.prometheus]]|' $TELEGRAF_CONF_FILE
