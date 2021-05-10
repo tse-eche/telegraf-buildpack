@@ -12,11 +12,14 @@ which exposes metrics of the application running in the container.
 
 For this scenario the container provides the following ENV-Variables:
 
-| Name      | Description                                      |
-| --------- | ------------------------------------------------ |
-| PROM_HOST | Host of the internal Prometheus metrics endpoint |
-| PROM_PORT | Port of the internal Prometheus metrics endpoint | 
-| PROM_PATH | Path of the internal Prometheus metrics endpoint |
+| Name          | Description                                      |
+| ------------- | ------------------------------------------------ |
+| PROM_HOST     | Host of the internal Prometheus metrics endpoint |
+| PROM_PORT     | Port of the internal Prometheus metrics endpoint | 
+| PROM_PATH     | Path of the internal Prometheus metrics endpoint |
+| GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint   |
+| GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint   | 
+| NO_PROM       | if 'true' Prometheus config will be skiped       |
 
 ## Installation
 

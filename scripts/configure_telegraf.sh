@@ -33,9 +33,9 @@ sed -i 's|dhc_application_name|'$APPLICATION_NAME'|' $TELEGRAF_CONF_FILE
 
 echo "-----> Application Name in Graphite: '$APPLICATION_NAME'"
 
-if [ -z ${GRAPHITE_URL+x} ]; 
+if [ -z ${GRAPHITE_HOST+x} ]; 
 then 
-  export GRAPHITE_URL=$(getGraphiteUrl)
+  export GRAPHITE_HOST=$(getGraphiteUrl)
 fi
 
 if [ -z ${GRAPHITE_PORT+x} ]; 
@@ -43,18 +43,18 @@ then
   export GRAPHITE_PORT=$(getGraphitePort)
 fi
 
-if [ ${GRAPHITE_URL} == "null" ]; then
+if [ ${GRAPHITE_HOST} == "null" ]; then
   echo "       **ERROR** No Graphite configuration found in Services!"
   echo "                 Please add the a9s_Prometheus Service to use this buildpack!"
   exit 1
 fi
 
-sed -i 's/localhost:2003/'$GRAPHITE_URL':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
+sed -i 's/localhost:2003/'$GRAPHITE_HOST':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 
-echo "-----> GraphiteURL: '$GRAPHITE_URL:$GRAPHITE_PORT'"
+echo "-----> GraphiteURL: '$GRAPHITE_HOST:$GRAPHITE_PORT'"
 
 
-if [ -z ${NO_PROM+x} ]; 
+if [ -z ${NO_PROM+x} -a ${NO_PROM} != "true"]; 
 then 
 
   if [ -z ${PROM_HOST+x} ]; 
@@ -80,6 +80,5 @@ else
 
   sed -i 's|[[inputs.prometheus]]|# [[inputs.prometheus]]|' $TELEGRAF_CONF_FILE
   sed -i 's|"urls = [\"http://localhost:9100/metrics\"]"|"# urls = [\"http://localhost:9100/metrics\"]"|' $TELEGRAF_CONF_FILE
-  # sed -i 's|[[inputs.prometheus]]|'\# [[inputs.prometheus]]'|' $TELEGRAF_CONF_FILE
 
 fi
