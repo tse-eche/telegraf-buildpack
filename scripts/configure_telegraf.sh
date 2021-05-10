@@ -58,7 +58,7 @@ then
   export NO_PROM="false";
 fi
 
-if [ ${NO_PROM} == "true"]; 
+if [ ${NO_PROM} == "true" ]; 
 then 
 
   sed -i 's|[[inputs.prometheus]]|# [[inputs.prometheus]]|' $TELEGRAF_CONF_FILE
