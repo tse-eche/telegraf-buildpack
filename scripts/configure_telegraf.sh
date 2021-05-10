@@ -53,21 +53,34 @@ sed -i 's/localhost:2003/'$GRAPHITE_URL':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 
 echo "-----> GraphiteURL: '$GRAPHITE_URL:$GRAPHITE_PORT'"
 
-if [ -z ${PROM_HOST+x} ]; 
+
+if [ -z ${NO_PROM+x} ]; 
 then 
-  export PROM_HOST="localhost"
+
+  if [ -z ${PROM_HOST+x} ]; 
+  then 
+    export PROM_HOST="localhost"
+  fi
+
+  if [ -z ${PROM_PORT+x}  ]; 
+  then 
+    export PROM_PORT=9100
+  fi
+
+  if [ -z ${PROM_PATH+x}  ]; 
+  then 
+    export PROM_PATH="metrics"
+  fi
+
+  sed -i 's|[[inputs.prometheus]]|'# [[inputs.prometheus]]'|' $TELEGRAF_CONF_FILE
+  sed -i 's|urls = ["http://localhost:9100/metrics"]|'# urls = ["http://localhost:9100/metrics"]'|' $TELEGRAF_CONF_FILE
+  sed -i 's|[[inputs.prometheus]]|'# [[inputs.prometheus]]'|' $TELEGRAF_CONF_FILE
+
+  echo "-----> Prometheus-URL: '$PROM_HOST:$PROM_PORT/$PROM_PATH'"
+else
+
+  sed -i 's|localhost:9100/metrics|'$PROM_HOST':'$PROM_PORT'/'$PROM_PATH'|' $TELEGRAF_CONF_FILE
+
+  echo "-----> Prometheus-URL: '$PROM_HOST:$PROM_PORT/$PROM_PATH'"
+
 fi
-
-if [ -z ${PROM_PORT+x}  ]; 
-then 
-  export PROM_PORT=9100
-fi
-
-if [ -z ${PROM_PATH+x}  ]; 
-then 
-  export PROM_PATH="metrics"
-fi
-
-sed -i 's|localhost:9100/metrics|'$PROM_HOST':'$PROM_PORT'/'$PROM_PATH'|' $TELEGRAF_CONF_FILE
-
-echo "-----> Prometheus-URL: '$PROM_HOST:$PROM_PORT/$PROM_PATH'"
