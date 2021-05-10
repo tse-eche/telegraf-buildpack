@@ -54,7 +54,7 @@ sed -i 's/localhost:2003/'$GRAPHITE_HOST':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
 echo "-----> GraphiteURL: '$GRAPHITE_HOST:$GRAPHITE_PORT'"
 
 
-if [ -z ${NO_PROM} -a ${NO_PROM} == "true"]; 
+if [ [-v ${NO_PROM}] -a [${NO_PROM} == "true"]]; 
 then 
 
   sed -i 's|[[inputs.prometheus]]|# [[inputs.prometheus]]|' $TELEGRAF_CONF_FILE
@@ -62,7 +62,7 @@ then
   sed -i 's|" metric_version = 2"|"# metric_version = 2"|' $TELEGRAF_CONF_FILE
 
   echo "-----> Skip Prometheus Configuration"
-  
+
 else
 
   if [ -z ${PROM_HOST+x} ]; 
