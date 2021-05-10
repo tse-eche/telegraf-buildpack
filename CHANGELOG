@@ -1,3 +1,7 @@
+V0.9.0  Change output from prometheus to graphite exporter
+        Detect Application name automaticaly and provide it as tag in graphite
+        Support Application name, Graphite url and Graphite port as ENV-variables
+
 V0.8.2  Change configuration to support more metrics informations
         Add Telegraf Licence
         Remove jq-binaries
