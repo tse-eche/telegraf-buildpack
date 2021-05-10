@@ -78,7 +78,7 @@ then
 
 else
 
-  sed -i 's|[[inputs.prometheus]]|'/# [[inputs.prometheus]]'|' $TELEGRAF_CONF_FILE
+  sed -i 's|[[inputs.prometheus]]|'#& [[inputs.prometheus]]'|' $TELEGRAF_CONF_FILE
   sed -i 's|urls = ["http://localhost:9100/metrics"]|'#& urls = ["http://localhost:9100/metrics"]'|' $TELEGRAF_CONF_FILE
   # sed -i 's|[[inputs.prometheus]]|'\# [[inputs.prometheus]]'|' $TELEGRAF_CONF_FILE
 
