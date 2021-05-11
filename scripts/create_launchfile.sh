@@ -15,4 +15,4 @@ processes:
 '
 
 echo "-----> Create launch file"
-# echo "$LAUNCH_CONTENTS" > "$DEPS_DIR"/"$DEPS_IDX"/launch.yml
+echo "$LAUNCH_CONTENTS" > "$DEPS_DIR"/"$DEPS_IDX"/launch.yml
