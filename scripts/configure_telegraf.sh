@@ -49,7 +49,7 @@ if [ ${GRAPHITE_HOST} == "null" ]; then
   exit 1
 fi
 
-sed -i 's/localhost:2003/'$GRAPHITE_HOST':'$GRAPHITE_PORT'/' $TELEGRAF_CONF_FILE
+sed -i 's|localhost:2003|'$GRAPHITE_HOST':'$GRAPHITE_PORT'|' $TELEGRAF_CONF_FILE
 
 echo "-----> GraphiteURL: '$GRAPHITE_HOST:$GRAPHITE_PORT'"
 
@@ -61,9 +61,9 @@ fi
 if [ ${NO_PROM} == "true" ]; 
 then 
 
-  sed -i 's/\[\[inputs.prometheus\]\]/# \[\[inputs.prometheus\]\]/' $TELEGRAF_CONF_FILE
-  sed -i 's/urls = \[\"http://localhost:9100/metrics\"\]/# urls = \[\"http://localhost:9100/metrics\"\]/' $TELEGRAF_CONF_FILE
-  sed -i 's/ metric_version = 2/# metric_version = 2/' $TELEGRAF_CONF_FILE
+  sed -i 's|\[\[inputs.prometheus\]\]|# \[\[inputs.prometheus\]\]|' $TELEGRAF_CONF_FILE
+  sed -i 's|urls = \[\"http://localhost:9100/metrics\"\]|# urls = \[\"http://localhost:9100/metrics\"\]|' $TELEGRAF_CONF_FILE
+  sed -i 's| metric_version = 2|# metric_version = 2|' $TELEGRAF_CONF_FILE
 
   echo "-----> Skip Prometheus Configuration"
 
