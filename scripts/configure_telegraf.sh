@@ -61,7 +61,7 @@ fi
 if [ ${NO_PROM} == "true" ]; 
 then 
 
-  sed -i 's|[[inputs.prometheus]]|# [[inputs.prometheus]]|' $TELEGRAF_CONF_FILE
+  sed -i 's/\[\[inputs.prometheus\]\]/# \[\[inputs.prometheus\]\]/' $TELEGRAF_CONF_FILE
   sed -i 's|"urls = [\"http://localhost:9100/metrics\"]"|"# urls = [\"http://localhost:9100/metrics\"]"|' $TELEGRAF_CONF_FILE
   sed -i 's|" metric_version = 2"|"# metric_version = 2"|' $TELEGRAF_CONF_FILE
 
