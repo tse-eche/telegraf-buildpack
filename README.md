@@ -3,7 +3,10 @@
 This Sidecar Buildpack includes the `Telegraf v1.18.0`-binaries to the container, in which the application is deployed.
 The configuration file of telegraf is prepared, to collect metrics from the container system.
 
-This sidecare also provides the ability to add a Prometheus compatible metrics endpoint,to scrape metrics from the application, which is running in the container.
+Also this Sidecar provides the ability to add a Prometheus compatible metrics endpoint,to scrape metrics from the application, which is running in the container.
+
+That these metrics can be collected a Graphite host must be defined to which the Telegraf will push the scraped metrics.
+For that purpose the `App-Monitor`-BuildPack can be used (https://gitlabci.exxeta.com/paas_buildpacks/app-monitor).
 
 The Sidecar provides follwing ENV-Variables:
 
