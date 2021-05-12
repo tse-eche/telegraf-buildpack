@@ -1,25 +1,23 @@
 # Telegraf Buildpack
 
-This Sidecar Buildpack includes the `Telegraf`-binaries to the container, in which the application is deployed.
-The configuration file from telegraf is prepared to collect metrics from the container system.
+This Sidecar Buildpack includes the `Telegraf v1.18.0`-binaries to the container, in which the application is deployed.
+The configuration file of telegraf is prepared, to collect metrics from the container system.
 
-For now the output is set to port 9100 for prometheus Server.
-After the update of the a9s-prometheus-Service this package will provide metrics to the graphite exporter included in a9s-prometheus-Service.
+This sidecare also provides the ability to add a Prometheus compatible metrics endpoint,to scrape metrics from the application, which is running in the container.
 
-This sidecare also provides the ability to add a Prometheus compatible metrics endpoint as configuration variable
-which exposes metrics of the application running in the container.
+The Sidecar provides follwing ENV-Variables:
 
+| Name          | Description                                      | Default    |
+| ------------- | ------------------------------------------------ | ---------- |
+| PROM_HOST     | Host of the internal Prometheus metrics endpoint | localhost  |
+| PROM_PORT     | Port of the internal Prometheus metrics endpoint | 9100       |
+| PROM_PATH     | Path of the internal Prometheus metrics endpoint | metrics    |
+| NO_PROM       | if 'true' Prometheus config will be skiped       | false      |
+| GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint   | undefined  |
+| GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint   | undefined  |
 
-For this scenario the container provides the following ENV-Variables:
-
-| Name          | Description                                      |
-| ------------- | ------------------------------------------------ |
-| PROM_HOST     | Host of the internal Prometheus metrics endpoint |
-| PROM_PORT     | Port of the internal Prometheus metrics endpoint | 
-| PROM_PATH     | Path of the internal Prometheus metrics endpoint |
-| GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint   |
-| GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint   | 
-| NO_PROM       | if 'true' Prometheus config will be skiped       |
+If `GRAPHITE_HOST` and `GRAPHITE_PORT` not provided by 'REVEAL USER PROVIDED ENV VARS' the sidecar try to find this information in `VCAP_SERVICES` environmen variable, which will be automaticaly set if the app is binded to the `a9s-Prometheus` service.
+If both are not set the Sidecar supply will fail.
 
 ## Installation
 
