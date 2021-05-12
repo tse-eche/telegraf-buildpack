@@ -1,25 +1,26 @@
 # Telegraf Buildpack
 
 This Sidecar Buildpack includes the `Telegraf`-binaries to the container, in which the application is deployed.
-The configuration file from telegraf is prepared to collect metrics from the container system.
-
-For now the output is set to port 9100 for prometheus Server.
-After the update of the a9s-prometheus-Service this package will provide metrics to the graphite exporter included in a9s-prometheus-Service.
+The configuration file from Telegraf is prepared to collect metrics from the container system as well from a configurable
+metrics endpoint of an application deployed inside the container.
 
 This sidecare also provides the ability to add a Prometheus compatible metrics endpoint as configuration variable
 which exposes metrics of the application running in the container.
 
+That these metrics can be collected a Graphite host must be defined to which the Telegraf will push the scraped metrics.
+For that purpose the `App-Monitor`-BuildPack can be used (https://gitlabci.exxeta.com/paas_buildpacks/app-monitor).
+
 
 For this scenario the container provides the following ENV-Variables:
 
-| Name          | Description                                      |
-| ------------- | ------------------------------------------------ |
-| PROM_HOST     | Host of the internal Prometheus metrics endpoint |
-| PROM_PORT     | Port of the internal Prometheus metrics endpoint | 
-| PROM_PATH     | Path of the internal Prometheus metrics endpoint |
-| GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint   |
-| GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint   | 
-| NO_PROM       | if 'true' Prometheus config will be skiped       |
+| Name          | Description                                                       |
+| ------------- | ----------------------------------------------------------------- |
+| PROM_HOST     | Host of the internal Prometheus metrics endpoint                  |
+| PROM_PORT     | Port of the internal Prometheus metrics endpoint                  | 
+| PROM_PATH     | Path of the internal Prometheus metrics endpoint                  |
+| GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint                    |
+| GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint                    |  
+| NO_PROM       | If 'true', no Prometheus metrics endpoint will be monitored       |
 
 ## Installation
 
