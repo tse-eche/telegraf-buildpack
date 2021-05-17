@@ -46,8 +46,16 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 52,
-  "iteration": 1620374344502,
-  
+  "iteration": 1621233996205,
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [
+        "overview"
+      ],
+      "type": "dashboards"
+    }
+  ],
   "panels": [
     {
       "collapsed": false,
@@ -125,7 +133,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "disk_total{application_name=\"$application_name\",host=\"$host\",path=\"/\"}",
+          "expr": "disk_total{application_name=\"$application_name\",host=\"$host\",path=\"-\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A"
@@ -236,86 +244,6 @@
         "#d44a3a"
       ],
       "datasource": "${DS_PROMETHEUS}",
-      "format": "s",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 4,
-        "x": 8,
-        "y": 1
-      },
-      "id": 46,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "expr": "time() - process_start_time_seconds{application_name=\"int-aws-connector.apps.internal:9100\"}",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "refId": "A"
-        }
-      ],
-      "thresholds": "",
-      "title": "Uptime",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
-      "datasource": "${DS_PROMETHEUS}",
       "description": "Total number of CPU cores",
       "format": "none",
       "gauge": {
@@ -327,8 +255,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 3,
-        "x": 12,
+        "w": 4,
+        "x": 8,
         "y": 1
       },
       "id": 18,
@@ -408,7 +336,7 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 4
       },
@@ -449,7 +377,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "disk_used_percent{application_name=\"$application_name\",host=\"$host\", path=\"/\"}",
+          "expr": "disk_used_percent{application_name=\"$application_name\",host=\"$host\", path=\"-\"}",
           "format": "time_series",
           "intervalFactor": 1,
           "refId": "A"
@@ -489,8 +417,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 5,
-        "x": 5,
+        "w": 4,
+        "x": 4,
         "y": 4
       },
       "id": 3,
@@ -570,8 +498,8 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 5,
-        "x": 10,
+        "w": 4,
+        "x": 8,
         "y": 4
       },
       "id": 4,
