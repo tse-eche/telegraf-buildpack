@@ -46,16 +46,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 52,
-  "iteration": 1621233996205,
-  "links": [
-    {
-      "icon": "external link",
-      "tags": [
-        "overview"
-      ],
-      "type": "dashboards"
-    }
-  ],
+  "iteration": 1621405133761,
   "panels": [
     {
       "collapsed": false,
@@ -1108,7 +1099,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
-          "description": "Overview of Send and Received Packages in absolut values",
+          "description": "Overview of Received and Send Packages in absolut values",
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -1140,17 +1131,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "net_packets_sent{host=\"$host\",application_name=\"$application_name\"}",
-              "format": "time_series",
-              "intervalFactor": 1,
-              "legendFormat": "Packages Send",
-              "refId": "A"
-            },
-            {
-              "expr": "net_packets_recv{host=\"$host\",application_name=\"$application_name\"} * - 1",
+              "expr": "net_packets_recv{host=\"$host\",application_name=\"$application_name\"} ",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Packages Received",
+              "refId": "A"
+            },
+            {
+              "expr": "net_packets_sent{host=\"$host\",application_name=\"$application_name\"} * - 1",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Packages Send",
               "refId": "B"
             }
           ],
@@ -1158,7 +1149,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Packages Send / Received",
+          "title": "Packages Received / Send",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1201,7 +1192,7 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "${DS_PROMETHEUS}",
-          "description": "Overview of Send and Received Bytes in absolut values",
+          "description": "Overview of Received and Send Bytes in absolut values",
           "fill": 1,
           "gridPos": {
             "h": 9,
@@ -1233,17 +1224,17 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "net_bytes_sent{application_name=\"$application_name\",host=\"$host\"}",
-              "format": "time_series",
-              "intervalFactor": 1,
-              "legendFormat": "Bytes Send",
-              "refId": "A"
-            },
-            {
-              "expr": "net_bytes_recv{application_name=\"$application_name\",host=\"$host\"} * -1",
+              "expr": "net_bytes_recv{application_name=\"$application_name\",host=\"$host\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Bytes Received",
+              "refId": "A"
+            },
+            {
+              "expr": "net_bytes_sent{application_name=\"$application_name\",host=\"$host\"} * -1",
+              "format": "time_series",
+              "intervalFactor": 1,
+              "legendFormat": "Bytes Send",
               "refId": "B"
             }
           ],
@@ -1251,7 +1242,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Bytes Send / Received",
+          "title": "Bytes Received / Send",
           "tooltip": {
             "shared": true,
             "sort": 0,
