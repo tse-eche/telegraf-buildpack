@@ -5,6 +5,8 @@ set -euo pipefail
 DEPS_DIR=$1
 DEPS_IDX=$2
 
+echo "-----> Install JQ binaries"
+
 VERSION="1.6"
 URL="https://github.com/stedolan/jq/releases/download/jq-${VERSION}/jq-linux64"
 
