@@ -5,7 +5,7 @@ set -euo pipefail
 DEPS_DIR=$1
 DEPS_IDX=$2
 
-echo "-----> Configuring telegraf"
+echo "-----> Configuring $SIDECAR_NAME Sidecar"
 
 TELEGRAF_CONF_FILE=$DEPS_DIR/$DEPS_IDX/telegraf/telegraf.conf
 

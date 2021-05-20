@@ -6,10 +6,11 @@ CACHE_DIR=$2
 DEPS_DIR=$3
 DEPS_IDX=$4
 
+export SIDECAR_NAME=`Telegraf`
 export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 
-echo "-----> Telegraf Sidecar-Buildpack version $(cat "$BUILDPACK_DIR/VERSION")"
-echo "-----> Running telegraf sidecar supply"
+echo "-----> $SIDECAR_NAME Sidecar-Buildpack version $(cat "$BUILDPACK_DIR/VERSION")"
+echo "-----> Running $SIDECAR_NAME sidecar supply"
 
 /bin/bash $BUILDPACK_DIR/scripts/install_jq.sh $DEPS_DIR $DEPS_IDX
 /bin/bash $BUILDPACK_DIR/scripts/install_module.sh $DEPS_DIR $DEPS_IDX

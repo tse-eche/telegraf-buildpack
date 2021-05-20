@@ -5,6 +5,8 @@ set -euo pipefail
 DEPS_DIR=$1
 DEPS_IDX=$2
 
+echo "-----> Install $SIDECAR_NAME binaries"
+
 VERSION="1.18.0"
 URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
 
@@ -44,6 +46,6 @@ if [ ! -f $InstallDir/telegraf ]; then
 fi
 
 if [ ! -f $InstallDir/telegraf ]; then
-  echo "       **ERROR** Could not download telegraf"
+  echo "       **ERROR** Could not download $SIDECAR_NAME"
   exit 1
 fi
