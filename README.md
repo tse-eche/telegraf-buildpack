@@ -14,7 +14,7 @@ The Sidecar provides follwing ENV-Variables:
 | ------------- | ------------------------------------------------ | ---------- |
 | PROM_HOST     | Host of the internal Prometheus metrics endpoint | localhost  |
 | PROM_PORT     | Port of the internal Prometheus metrics endpoint | 9100       |
-| PROM_PATH     | Path of the internal Prometheus metrics endpoint | metrics    |
+| PROM_PATH     | Path of the internal Prometheus metrics endpoint | /metrics   |
 | NO_PROM       | if 'true' Prometheus config will be skiped       | false      |
 | GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint   | undefined  |
 | GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint   | undefined  |
