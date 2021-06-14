@@ -1,6 +1,6 @@
 # Telegraf Buildpack
 
-This Sidecar Buildpack includes the `Telegraf v1.18.0`-binaries to the container, in which the application is deployed.
+This Sidecar Buildpack includes the `Telegraf v1.18.3`-binaries to the container, in which the application is deployed.
 The configuration file of telegraf is prepared, to collect metrics from the container system.
 
 Also this Sidecar provides the ability to add a Prometheus compatible metrics endpoint,to scrape metrics from the application, which is running in the container.

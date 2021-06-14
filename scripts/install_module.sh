@@ -36,11 +36,10 @@ if [ ! -f $InstallDir/telegraf ]; then
   tar xfz /tmp/module.tar.gz -C $DepDir
   mkdir -p $InstallDir
   mv "$DepDir/telegraf-${VERSION}/usr/bin/telegraf" "$InstallDir/"
-  ls -lsa $InstallDir
+  mv "$BUILDPACK_DIR/src/telegraf/telegraf.conf" "$InstallDir/"
+  mv "$BUILDPACK_DIR/src/telegraf/THIRD_PARTY_LICENSES" "$InstallDir/"
   rm /tmp/module.tar.gz
 
-  # mv "$BUILDPACK_DIR/src/telegraf" $InstallDir
-  
   mkdir -p "$DepDir/bin"
   cd $DepDir/bin;
   ln -s "../telegraf/telegraf" "./telegraf" 

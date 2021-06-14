@@ -1,3 +1,5 @@
+V1.2.0  telegraf binaries will be downloaded and hash checked from influxdata-server
+
 V1.1.1  PROM_PATH needs to start with an "/"
 
 V1.1.0  Create ENV SIDECAR_NAME to be in all logs the same
