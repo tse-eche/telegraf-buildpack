@@ -35,6 +35,7 @@ if [ ! -f $InstallDir/telegraf ]; then
 
   tar xfz /tmp/module.tar.gz -C $DepDir
   mv "$DepDir/telegraf-${VERSION}" $InstallDir
+  ls -lsa $InstallDir
   rm /tmp/module.tar.gz
 
   # mv "$BUILDPACK_DIR/src/telegraf" $InstallDir
