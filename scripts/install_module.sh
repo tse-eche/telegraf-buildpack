@@ -34,7 +34,7 @@ if [ ! -f $InstallDir/telegraf ]; then
   fi
 
   tar xfz /tmp/module.tar.gz -C $DepDir
-  mv "$DepDir/telegraf-${VERSION}/usr/bin/telegraf" $InstallDir
+  mv "$DepDir/telegraf-${VERSION}/usr/bin/telegraf/" $InstallDir
   ls -lsa $InstallDir
   rm /tmp/module.tar.gz
 
