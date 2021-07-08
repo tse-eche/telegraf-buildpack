@@ -20,6 +20,16 @@ getSpaceName()
     echo $(echo $VCAP_APPLICATION | jq -r '.space_name')
 }
 
+getOrganizationName()
+{
+    echo $(echo $VCAP_APPLICATION | jq -r '.organization_name')
+}
+
+getSpaceName()
+{
+    echo $(echo $VCAP_APPLICATION | jq -r '.space_name')
+}
+
 getApplicationName()
 {
     echo $(echo $VCAP_APPLICATION | jq -r '.application_name')
