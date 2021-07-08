@@ -9,6 +9,16 @@ echo "-----> Configuring $SIDECAR_NAME Sidecar"
 
 TELEGRAF_CONF_FILE=$DEPS_DIR/$DEPS_IDX/telegraf/telegraf.conf
 
+getOrganizationName()
+{
+    echo $(echo $VCAP_APPLICATION | jq -r '.organization_name')
+}
+
+getSpaceName()
+{
+    echo $(echo $VCAP_APPLICATION | jq -r '.space_name')
+}
+
 getApplicationName()
 {
     echo $(echo $VCAP_APPLICATION | jq -r '.application_name')
@@ -24,11 +34,23 @@ getGraphitePort()
     echo $(echo $VCAP_SERVICES | jq '."a9s-prometheus"[0].credentials."graphite_exporter_port"')
 }
 
+if [ -z ${ORGANIZATION_NAME+x} ]; 
+then 
+  export ORGANIZATION_NAME=$(getOrganizationName)
+fi
+
+if [ -z ${SPACE_NAME+x} ]; 
+then 
+  export SPACE_NAME=$(getSpaceName)
+fi
+
 if [ -z ${APPLICATION_NAME+x} ]; 
 then 
   export APPLICATION_NAME=$(getApplicationName)
 fi
 
+sed -i 's|dhc_organization_name|'$ORGANIZATION_NAME'|' $TELEGRAF_CONF_FILE
+sed -i 's|dhc_space_name|'$SPACE_NAME'|' $TELEGRAF_CONF_FILE
 sed -i 's|dhc_application_name|'$APPLICATION_NAME'|' $TELEGRAF_CONF_FILE
 
 echo "-----> Application Name in Graphite: '$APPLICATION_NAME'"
