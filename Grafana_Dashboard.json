@@ -99,7 +99,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "disk_used_percent",
+              "expr": "disk_used_percent{organization_name=\"$organization_name\", space_name=\"$space_name\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{application_name}}",
@@ -188,7 +188,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cgroup_memory_usage_in_bytes / cgroup_memory_limit_in_bytes * 100",
+              "expr": "cgroup_memory_usage_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\"} / cgroup_memory_limit_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\"} * 100",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{application_name}}",
@@ -277,7 +277,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "(cpu_usage_system{cpu=\"cpu-total\"} + cpu_usage_user{cpu=\"cpu-total\"})",
+              "expr": "(cpu_usage_system{organization_name=\"$organization_name\", space_name=\"$space_name\", cpu=\"cpu-total\"} + cpu_usage_user{organization_name=\"$organization_name\", space_name=\"$space_name\", cpu=\"cpu-total\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "{{application_name}}",
@@ -402,7 +402,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "disk_total{application_name=\"$application_name\",host=\"$host\",path=\"-\"}",
+              "expr": "disk_total{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\",path=\"-\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -484,7 +484,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "cgroup_memory_limit_in_bytes{application_name=\"$application_name\",host=\"$host\"}",
+              "expr": "cgroup_memory_limit_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -565,7 +565,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "count(cpu_usage_system{application_name=\"$application_name\",host=\"$host\"}) - 1",
+              "expr": "count(cpu_usage_system{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"}) - 1",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -646,7 +646,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "disk_used_percent{application_name=\"$application_name\",host=\"$host\", path=\"-\"}",
+              "expr": "disk_used_percent{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\", path=\"-\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -727,7 +727,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "cgroup_memory_usage_in_bytes{application_name=\"$application_name\",host=\"$host\"} / cgroup_memory_limit_in_bytes{application_name=\"$application_name\",host=\"$host\"} * 100",
+              "expr": "cgroup_memory_usage_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"} / cgroup_memory_limit_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"} * 100",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -808,7 +808,7 @@
           "tableColumn": "",
           "targets": [
             {
-              "expr": "(cpu_usage_system{host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"})",
+              "expr": "(cpu_usage_system{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"} + cpu_usage_user{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"})",
               "format": "time_series",
               "hide": false,
               "instant": true,
@@ -880,7 +880,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "disk_used_percent{application_name=\"$application_name\",host=\"$host\"}",
+              "expr": "disk_used_percent{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -965,7 +965,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cgroup_memory_usage_in_bytes{application_name=\"$application_name\",host=\"$host\"} / cgroup_memory_limit_in_bytes{application_name=\"$application_name\",host=\"$host\"} * 100",
+              "expr": "cgroup_memory_usage_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"} / cgroup_memory_limit_in_bytes{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"} * 100",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -1051,7 +1051,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "cpu_usage_system{host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"} + cpu_usage_user{host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"}",
+              "expr": "cpu_usage_system{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"} + cpu_usage_user{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\",application_name=\"$application_name\",cpu=\"cpu-total\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -1151,7 +1151,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "net_response_response_time{host=\"$host\", application_name=\"$application_name\"}",
+              "expr": "net_response_response_time{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\", application_name=\"$application_name\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -1241,91 +1241,91 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "(netstat_tcp_close{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_close{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP close",
               "refId": "A"
             },
             {
-              "expr": "(netstat_tcp_close_wait{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_close_wait{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP close wait",
               "refId": "B"
             },
             {
-              "expr": "(netstat_tcp_closing{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_closing{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP closing",
               "refId": "C"
             },
             {
-              "expr": "(netstat_tcp_established{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_established{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP established",
               "refId": "D"
             },
             {
-              "expr": "(netstat_tcp_fin_wait1{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_fin_wait1{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP fin wait1",
               "refId": "E"
             },
             {
-              "expr": "(netstat_tcp_fin_wait2{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_fin_wait2{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP fin wait2",
               "refId": "F"
             },
             {
-              "expr": "(netstat_tcp_last_ack{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_last_ack{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP last ack",
               "refId": "G"
             },
             {
-              "expr": "(netstat_tcp_listen{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_listen{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP listen",
               "refId": "H"
             },
             {
-              "expr": "(netstat_tcp_none{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_none{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP none",
               "refId": "I"
             },
             {
-              "expr": "(netstat_tcp_syn_recv{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_syn_recv{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP syn recv",
               "refId": "J"
             },
             {
-              "expr": "(netstat_tcp_syn_sent{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_syn_sent{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP syn sent",
               "refId": "K"
             },
             {
-              "expr": "(netstat_tcp_time_wait{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_tcp_time_wait{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "TCP time wait",
               "refId": "L"
             },
             {
-              "expr": "(netstat_udp_socket{application_name=\"$application_name\", host=\"$host\"})",
+              "expr": "(netstat_udp_socket{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\", host=\"$host\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "UDP socket",
@@ -1413,14 +1413,14 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "net_packets_recv{host=\"$host\",application_name=\"$application_name\"} ",
+              "expr": "net_packets_recv{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\",application_name=\"$application_name\"} ",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Packages Received",
               "refId": "A"
             },
             {
-              "expr": "net_packets_sent{host=\"$host\",application_name=\"$application_name\"} * - 1",
+              "expr": "net_packets_sent{organization_name=\"$organization_name\", space_name=\"$space_name\", host=\"$host\",application_name=\"$application_name\"} * - 1",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Packages Send",
@@ -1506,14 +1506,14 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "net_bytes_recv{application_name=\"$application_name\",host=\"$host\"}",
+              "expr": "net_bytes_recv{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"}",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Bytes Received",
               "refId": "A"
             },
             {
-              "expr": "net_bytes_sent{application_name=\"$application_name\",host=\"$host\"} * -1",
+              "expr": "net_bytes_sent{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=\"$application_name\",host=\"$host\"} * -1",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "Bytes Send",
@@ -1615,7 +1615,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(net_ip_defaultttl{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_defaultttl{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "DefaultTTL",
@@ -1624,7 +1624,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_forwarding{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_forwarding{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "Forwarding",
@@ -1633,7 +1633,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_forwdatagrams{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_forwdatagrams{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "ForwDatagrams",
@@ -1642,7 +1642,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_fragcreates{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_fragcreates{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "FragCreates",
@@ -1651,7 +1651,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_fragfails{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_fragfails{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "FragFails",
@@ -1660,7 +1660,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_fragoks{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_fragoks{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "FragOKs",
@@ -1669,7 +1669,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_inaddrerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_inaddrerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InAddrErrors",
@@ -1678,7 +1678,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_indelivers{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_indelivers{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InDelivers",
@@ -1687,7 +1687,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_indiscards{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_indiscards{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InDiscards",
@@ -1696,7 +1696,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_inhdrerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_inhdrerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InHdrErrors",
@@ -1705,7 +1705,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_inreceives{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_inreceives{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InReceives",
@@ -1714,7 +1714,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_inunknownprotos{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_inunknownprotos{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InUnknownProtos",
@@ -1723,14 +1723,14 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_outdiscards{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_outdiscards{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "OutDiscards",
               "refId": "S"
             },
             {
-              "expr": "irate(net_ip_outnoroutes{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_outnoroutes{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutNoRoutes",
@@ -1739,7 +1739,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_outrequests{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_outrequests{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutRequests",
@@ -1748,7 +1748,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_reasmfails{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_reasmfails{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "ReasmFails",
@@ -1757,7 +1757,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_reasmoks{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_reasmoks{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "ReasmOKs",
@@ -1766,7 +1766,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_reasmreqds{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_reasmreqds{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "ReasmReqds",
@@ -1775,7 +1775,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_ip_reasmtimeout{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_ip_reasmtimeout{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "ReasmTimeout",
@@ -1865,7 +1865,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(net_tcp_activeopens{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_activeopens{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "ActiveOpens",
@@ -1874,7 +1874,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_attemptfails{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_attemptfails{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "AttemptFails",
@@ -1883,7 +1883,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_currestab{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_currestab{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "CurrEstab",
@@ -1892,7 +1892,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_estabresets{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_estabresets{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "EstabResets",
@@ -1901,7 +1901,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_incsumerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_incsumerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InCsumErros",
@@ -1910,7 +1910,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_inerrs{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_inerrs{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InErrs",
@@ -1919,7 +1919,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_insegs{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_insegs{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InSegs",
@@ -1928,7 +1928,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_maxconn{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_maxconn{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "MaxConn",
@@ -1937,7 +1937,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_outrsts{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_outrsts{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutRsts",
@@ -1946,7 +1946,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_outsegs{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_outsegs{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutSegs",
@@ -1955,7 +1955,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_passiveopens{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_passiveopens{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "PassiveOpens",
@@ -1964,7 +1964,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_retranssegs{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_retranssegs{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RetransSegs",
@@ -1973,7 +1973,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_rtoalgorithm{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_rtoalgorithm{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RtoAlgorithm",
@@ -1982,7 +1982,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_rtomax{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_rtomax{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RtoMax",
@@ -1991,7 +1991,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_tcp_rtomin{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_tcp_rtomin{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RtoMin",
@@ -2082,7 +2082,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(net_udp_ignoredmulti{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_ignoredmulti{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "IgnoredMulti",
@@ -2091,7 +2091,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_incsumerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_incsumerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors",
@@ -2100,7 +2100,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_indatagrams{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_indatagrams{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InDatagrams",
@@ -2109,7 +2109,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_inerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_inerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InErrors",
@@ -2118,7 +2118,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_noports{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_noports{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "NoPorts",
@@ -2127,7 +2127,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_outdatagrams{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_outdatagrams{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutDatagrams",
@@ -2136,7 +2136,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_rcvbuferrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_rcvbuferrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RcvbufErrors",
@@ -2145,7 +2145,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udp_sndbuferrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udp_sndbuferrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SndbufErrors",
@@ -2236,7 +2236,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "irate(net_udplite_ignoredmulti{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_ignoredmulti{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "IgnoredMulti",
@@ -2245,7 +2245,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_incsumerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_incsumerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InCsumErrors",
@@ -2254,7 +2254,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_indatagrams{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_indatagrams{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InDatagrams",
@@ -2263,7 +2263,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_inerrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_inerrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "InErrors",
@@ -2272,7 +2272,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_noports{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_noports{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "NoPorts",
@@ -2281,7 +2281,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_outdatagrams{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_outdatagrams{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "OutDatagrams",
@@ -2290,7 +2290,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_rcvbuferrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_rcvbuferrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "RcvbufErrors",
@@ -2299,7 +2299,7 @@
               "target": ""
             },
             {
-              "expr": "irate(net_udplite_sndbuferrors{application_name=~\"$application_name\",host=~\"$host\"}[5m])",
+              "expr": "irate(net_udplite_sndbuferrors{organization_name=\"$organization_name\", space_name=\"$space_name\", application_name=~\"$application_name\",host=~\"$host\"}[5m])",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "SndbufErrors",
@@ -2362,6 +2362,48 @@
   ],
   "templating": {
     "list": [
+      {
+        "allValue": null,
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "label_values(organization_name)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Organization",
+        "multi": false,
+        "name": "organization_name",
+        "options": [],
+        "query": "label_values(organization_name)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "datasource": "${DS_PROMETHEUS}",
+        "definition": "label_values(space_name)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Space",
+        "multi": false,
+        "name": "space_name",
+        "options": [],
+        "query": "label_values(space_name)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
       {
         "allValue": null,
         "datasource": "${DS_PROMETHEUS}",
@@ -2437,5 +2479,5 @@
   },
   "timezone": "",
   "title": "Container Monitor",
-  "version": 2
+  "version": 3
 }
