@@ -1,3 +1,5 @@
+V1.3.1  Add full qualified application name to logs
+
 V1.3.0  Add Stdout-Output to Telegraf.config
         Set NO_PROM = true defaultwise
         Bypas Graphite configuration and switch to Stdout-Output if no GRAPHITE_HOST is founded

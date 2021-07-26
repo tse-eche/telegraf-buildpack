@@ -55,6 +55,7 @@ sed -i 's|dhc_space_name|'$SPACE_NAME'|' $TELEGRAF_CONF_FILE
 sed -i 's|dhc_application_name|'$APPLICATION_NAME'|' $TELEGRAF_CONF_FILE
 
 echo "-----> Application Name in Graphite: '$APPLICATION_NAME'"
+echo "-----> Full Qualified Application Name in Graphite: '$ORGANIZATION_NAME.$SPACE_NAME.$APPLICATION_NAME'"
 
 if [ -z ${GRAPHITE_HOST+x} ]; 
 then 
