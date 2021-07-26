@@ -8,6 +8,7 @@ DEPS_IDX=$2
 echo "-----> Configuring $SIDECAR_NAME Sidecar"
 
 TELEGRAF_CONF_FILE=$DEPS_DIR/$DEPS_IDX/telegraf/telegraf.conf
+NO_GRAPHITE="false";
 
 getOrganizationName()
 {
@@ -69,16 +70,30 @@ if [ ${GRAPHITE_HOST} == "null" ]; then
   echo "       **ERROR** No Graphite configuration found in Services!"
   echo "                 Please add the a9s_Prometheus Service to use this buildpack,"
   echo "                 or define 'GRAPHITE_HOST' and 'GRAPHITE_PORT' as environment varaible!"
-  exit 1
+  NO_GRAPHITE="true";
 fi
 
-sed -i 's|localhost:2003|'$GRAPHITE_HOST':'$GRAPHITE_PORT'|' $TELEGRAF_CONF_FILE
+if [ ${NO_GRAPHITE} == "false" ]; then
+  sed -i 's|localhost:2003|'$GRAPHITE_HOST':'$GRAPHITE_PORT'|' $TELEGRAF_CONF_FILE
 
-echo "-----> GraphiteURL: '$GRAPHITE_HOST:$GRAPHITE_PORT'"
+  echo "-----> GraphiteURL: '$GRAPHITE_HOST:$GRAPHITE_PORT'"
+else
+  sed -i 's|\[\[outputs.graphite\]\]|# \[\[outputs.graphite\]\]|' $TELEGRAF_CONF_FILE
+  sed -i 's| servers = \[\"localhost:2003\"\]|# servers = \[\"localhost:2003\"\]|' $TELEGRAF_CONF_FILE
+  sed -i 's| graphite_tag_support = true|# graphite_tag_support = true|' $TELEGRAF_CONF_FILE
+  sed -i 's| graphite_separator = "."|# graphite_separator = "."|' $TELEGRAF_CONF_FILE
+
+  echo "-----> Skip Graphite Configuration"
+  echo "-----> Set STDOUT Configuration"
+
+  sed -i 's|# \[\[outputs.file\]\]|\[\[outputs.file\]\]|' $TELEGRAF_CONF_FILE
+  sed -i 's|# files = \[\"stdout\"\]|files = \[\"stdout\"\]|' $TELEGRAF_CONF_FILE
+  sed -i 's|# data_format = \"graphite\"|data_format = \"graphite\"|' $TELEGRAF_CONF_FILE
+fi
 
 if [ -z ${NO_PROM+x} ]; 
 then 
-  export NO_PROM="false";
+  export NO_PROM="true";
 fi
 
 if [ ${NO_PROM} == "true" ]; 

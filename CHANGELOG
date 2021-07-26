@@ -1,3 +1,7 @@
+V1.3.0  Add Stdout-Output to Telegraf.config
+        Set NO_PROM = true defaultwise
+        Bypas Graphite configuration and switch to Stdout-Output if no GRAPHITE_HOST is founded
+
 V1.2.0  telegraf binaries will be downloaded and hash checked from influxdata-server
 
 V1.1.1  PROM_PATH needs to start with an "/"
