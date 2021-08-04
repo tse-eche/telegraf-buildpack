@@ -97,7 +97,7 @@ then
   export PROM_ENABLED="false";
 fi
 
-if [ ${PROM_ENABLED} == "true" ]; 
+if [ ${PROM_ENABLED} == "false" ]; 
 then 
 
   sed -i 's|\[\[inputs.prometheus\]\]|# \[\[inputs.prometheus\]\]|' $TELEGRAF_CONF_FILE
