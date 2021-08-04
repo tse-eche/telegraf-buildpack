@@ -1,3 +1,5 @@
+V1.3.2  Change NO_RPOM ENV to PROM_ENABLED and set defaultwise to false
+
 V1.3.1  Add full qualified application name to logs
 
 V1.3.0  Add Stdout-Output to Telegraf.config

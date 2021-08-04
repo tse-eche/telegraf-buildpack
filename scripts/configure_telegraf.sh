@@ -92,12 +92,12 @@ else
   sed -i 's|# data_format = \"graphite\"|data_format = \"graphite\"|' $TELEGRAF_CONF_FILE
 fi
 
-if [ -z ${NO_PROM+x} ]; 
+if [ -z ${PROM_ENABLED+x} ]; 
 then 
-  export NO_PROM="true";
+  export PROM_ENABLED="false";
 fi
 
-if [ ${NO_PROM} == "true" ]; 
+if [ ${PROM_ENABLED} == "true" ]; 
 then 
 
   sed -i 's|\[\[inputs.prometheus\]\]|# \[\[inputs.prometheus\]\]|' $TELEGRAF_CONF_FILE
