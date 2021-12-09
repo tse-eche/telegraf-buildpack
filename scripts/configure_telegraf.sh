@@ -134,7 +134,7 @@ if [ ${DEBUG} == "true" ];
   sed -i 's|# debug = true|debug = true|' $TELEGRAF_CONF_FILE
 fi
 
-if [ -z ${PROM_REMOTE_WRITE_URL+x} ]; 
+if [ -n ${PROM_REMOTE_WRITE_URL+x} ]; 
 then 
   sed -i 's|# \[\[outputs.http\]\]|\[\[outputs.http\]\]|' $TELEGRAF_CONF_FILE
   sed -i 's|#   url = "remote_write_url"| url = "'$PROM_REMOTE_WRITE_URL'"|' $TELEGRAF_CONF_FILE
@@ -143,4 +143,6 @@ then
   sed -i 's|#   #   Content-Type = "application/x-protobuf"|    Content-Type = "application/x-protobuf"|' $TELEGRAF_CONF_FILE
   sed -i 's|#   #   Content-Encoding = "snappy"|    Content-Encoding = "snappy"|' $TELEGRAF_CONF_FILE
   sed -i 's|#   #   X-Prometheus-Remote-Write-Version = "0.1.0"|    X-Prometheus-Remote-Write-Version = "0.1.0"|' $TELEGRAF_CONF_FILE
+
+  echo "-----> Prometheus-RemoteWrite-URL: '$PROM_REMOTE_WRITE_URL'"
 fi
