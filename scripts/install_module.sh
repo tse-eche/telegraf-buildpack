@@ -7,7 +7,7 @@ DEPS_IDX=$2
 
 echo "-----> Install $SIDECAR_NAME binaries"
 
-VERSION="1.18.3"
+VERSION="1.20.4"
 URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
 
 if [ $CF_STACK == "cflinuxfs3" ]; then
