@@ -128,3 +128,8 @@ else
   echo "-----> Prometheus-URL: '$PROM_HOST:$PROM_PORT$PROM_PATH'"
 
 fi
+
+if [ ${DEBUG} == "true" ]; 
+  sed -i 's|quiet = true|quiet = false|' $TELEGRAF_CONF_FILE
+  sed -i 's|# debug = true|debug = true|' $TELEGRAF_CONF_FILE
+fi

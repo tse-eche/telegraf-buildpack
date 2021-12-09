@@ -1,3 +1,7 @@
+V1.3.5 Add DEBUG env to enable and disable logging and debug messages
+
+V1.3.4  Remove logging
+
 V1.3.3  Bugfix comment out prometheus
 
 V1.3.2  Change NO_RPOM ENV to PROM_ENABLED and set defaultwise to false

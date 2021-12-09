@@ -18,6 +18,7 @@ The Sidecar provides follwing ENV-Variables:
 | PROM_ENABLED  | if 'false' Prometheus config will be skipped     | false      |
 | GRAPHITE_HOST | Host of the Graphite Exporter metrics endpoint   | undefined  |
 | GRAPHITE_PORT | Port of the Graphite Exporter metrics endpoint   | undefined  |
+| DEBUG         | Increase the logs to stdout                      | false      |
 
 If `GRAPHITE_HOST` and `GRAPHITE_PORT` not provided by 'REVEAL USER PROVIDED ENV VARS' the sidecar try to find this information in `VCAP_SERVICES` environmen variable, which will be automaticaly set if the app is binded to the `a9s-Prometheus` service.
 If both are not set the Sidecar supply will fail.
