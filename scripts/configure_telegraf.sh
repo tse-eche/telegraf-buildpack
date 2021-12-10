@@ -130,6 +130,7 @@ else
 fi
 
 if [ ${DEBUG} == "true" ]; 
+then
   sed -i 's|quiet = true|quiet = false|' $TELEGRAF_CONF_FILE
   sed -i 's|# debug = true|debug = true|' $TELEGRAF_CONF_FILE
 fi
