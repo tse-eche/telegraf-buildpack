@@ -129,6 +129,11 @@ else
 
 fi
 
+if [ -z ${DEBUG+x} ]; 
+then 
+  export DEBUG="false";
+fi
+
 if [ ${DEBUG} == "true" ]; 
 then
   sed -i 's|quiet = true|quiet = false|' $TELEGRAF_CONF_FILE
