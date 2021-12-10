@@ -140,7 +140,7 @@ then
   sed -i 's|# debug = true|debug = true|' $TELEGRAF_CONF_FILE
 fi
 
-if [ -n ${PROM_REMOTE_WRITE_URL+x} ]; 
+if [ ! -z ${PROM_REMOTE_WRITE_URL+x} ]; 
 then 
   sed -i 's|# \[\[outputs.http\]\]|\[\[outputs.http\]\]|' $TELEGRAF_CONF_FILE
   sed -i 's|#   url = "remote_write_url"| url = "'$PROM_REMOTE_WRITE_URL'"|' $TELEGRAF_CONF_FILE
