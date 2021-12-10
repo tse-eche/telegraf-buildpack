@@ -11,7 +11,7 @@ VERSION="1.20.4"
 URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
 
 if [ $CF_STACK == "cflinuxfs3" ]; then
-    SHA256="8fa528ad53d4e23bf52e0abb93125134b4f46755b2f28331c27119a078542f9c"
+    SHA256="f27a8e4a395e5ad7fac7663400b9119b0b0ff77f3baf5e68fa944b40b5094fa4"
 else
   echo "       **ERROR** Unsupported stack"
   echo "                 See https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html for more info"

@@ -1,3 +1,5 @@
+V1.4.2  Add right SHA256 for new Telegraf version
+
 V1.4.1  BugFix Related to Prometheus RemoteWrite
 
 V1.4.0  Update Telegraf Version to 1.20.4
