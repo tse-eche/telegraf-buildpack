@@ -10,16 +10,18 @@ For that purpose the `App-Monitor`-BuildPack can be used (https://gitlabci.exxet
 
 The Sidecar provides follwing ENV-Variables:
 
-| Name                    | Description                                       | Default     |
-| ----------------------- | ------------------------------------------------- | ----------- |
-| PROM_HOST               | Host of the internal Prometheus metrics endpoint  | localhost   |
-| PROM_PORT               | Port of the internal Prometheus metrics endpoint  | 9100        |
-| PROM_PATH               | Path of the internal Prometheus metrics endpoint  | /metrics    |
-| PROM_ENABLED            | if 'false' Prometheus config will be skipped      | false       |
-| GRAPHITE_HOST           | Host of the Graphite Exporter metrics endpoint    | undefined   |
-| GRAPHITE_PORT           | Port of the Graphite Exporter metrics endpoint    | undefined   |
-| DEBUG                   | Increase the logs to stdout                       | false       |
-| PROM_REMOTE_WRITE_URL   | RemoteWrite-URL of Prometheus Instance            | undefined   |
+| Name                     | Description                                             | Default     |
+| ------------------------ | ------------------------------------------------------- | ----------- |
+| PROM_HOST                | Host of the internal Prometheus metrics endpoint        | localhost   |
+| PROM_PORT                | Port of the internal Prometheus metrics endpoint        | 9100        |
+| PROM_PATH                | Path of the internal Prometheus metrics endpoint        | /metrics    |
+| PROM_ENABLED             | if 'false' Prometheus config will be skipped            | false       |
+| GRAPHITE_HOST            | Host of the Graphite Exporter metrics endpoint          | undefined   |
+| GRAPHITE_PORT            | Port of the Graphite Exporter metrics endpoint          | undefined   |
+| DEBUG                    | Increase the logs to stdout                             | false       |
+| PROM_REMOTE_WRITE_URL    | RemoteWrite-URL of Prometheus Instance                  | undefined   |
+| PROM_REMOTE_WRITE_USER   | Basic Auth User of Remote Write Prometheus Instance     | undefined   |
+| PROM_REMOTE_WRITE_PASSWD | Basic Auth Password of Remote Write Prometheus Instance | undefined   |
 
 If `GRAPHITE_HOST` and `GRAPHITE_PORT` not provided by 'REVEAL USER PROVIDED ENV VARS' the sidecar try to find this information in `VCAP_SERVICES` environmen variable, which will be automaticaly set if the app is binded to the `a9s-Prometheus` service.
 If both are not set the Sidecar supply will fail.
