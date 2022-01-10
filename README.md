@@ -44,4 +44,4 @@ The `Grafana_Dashboard.json` inherits and Dashboard-Template for Grafana in Json
 ## Prometheus Remote Write
 
 Prometheus RemoteWrite functionality is disabled by default.
-Currently Prometheus RemoteWrite functionality is only supported without credentials.
+Currently Prometheus RemoteWrite functionality is only supported with Basic-Auth credentials.
