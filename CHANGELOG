@@ -1,3 +1,7 @@
+V1.4.7  Add Basic User and Password for Prometheus Remote Write
+
+V1.4.6  Set STDOUT as output if graphite and prometheus Remotewrite is not set or DEBUG is set
+
 V1.4.5  Fix another semantical bug
 
 V1.4.4  Set Default Value of DEBUG Flag

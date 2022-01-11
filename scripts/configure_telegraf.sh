@@ -85,11 +85,6 @@ else
   sed -i 's| graphite_separator = "."|# graphite_separator = "."|' $TELEGRAF_CONF_FILE
 
   echo "-----> Skip Graphite Configuration"
-  echo "-----> Set STDOUT Configuration"
-
-  sed -i 's|# \[\[outputs.file\]\]|\[\[outputs.file\]\]|' $TELEGRAF_CONF_FILE
-  sed -i 's|# files = \[\"stdout\"\]|files = \[\"stdout\"\]|' $TELEGRAF_CONF_FILE
-  sed -i 's|# data_format = \"graphite\"|data_format = \"graphite\"|' $TELEGRAF_CONF_FILE
 fi
 
 if [ -z ${PROM_ENABLED+x} ]; 
@@ -149,6 +144,18 @@ then
   sed -i 's|#   #   Content-Type = "application/x-protobuf"|    Content-Type = "application/x-protobuf"|' $TELEGRAF_CONF_FILE
   sed -i 's|#   #   Content-Encoding = "snappy"|    Content-Encoding = "snappy"|' $TELEGRAF_CONF_FILE
   sed -i 's|#   #   X-Prometheus-Remote-Write-Version = "0.1.0"|    X-Prometheus-Remote-Write-Version = "0.1.0"|' $TELEGRAF_CONF_FILE
+  sed -i 's|#   #   X-Prometheus-Remote-Write-Version = "0.1.0"|    X-Prometheus-Remote-Write-Version = "0.1.0"|' $TELEGRAF_CONF_FILE
+  sed -i 's|#   # username = "remote_write_user"|  username = "'$PROM_REMOTE_WRITE_USER'"|' $TELEGRAF_CONF_FILE
+  sed -i 's|#   # password = "remote_write_passwd"|  password = "'$PROM_REMOTE_WRITE_PASSWD'"|' $TELEGRAF_CONF_FILE
 
   echo "-----> Prometheus-RemoteWrite-URL: '$PROM_REMOTE_WRITE_URL'"
+fi
+
+if [ ${DEBUG} == "true" ] || ([ ${NO_GRAPHITE} == "true" ] && [ -z ${PROM_REMOTE_WRITE_URL+x} ])
+then
+  sed -i 's|# \[\[outputs.file\]\]|\[\[outputs.file\]\]|' $TELEGRAF_CONF_FILE
+  sed -i 's|# files = \[\"stdout\"\]|files = \[\"stdout\"\]|' $TELEGRAF_CONF_FILE
+  sed -i 's|# data_format = \"graphite\"|data_format = \"graphite\"|' $TELEGRAF_CONF_FILE
+
+  echo "-----> Set STDOUT Configuration"
 fi
