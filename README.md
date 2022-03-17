@@ -63,7 +63,6 @@ The Sidecar provides follwing ENV-Variables:
 | PROM_REMOTE_WRITE_PASSWD | Basic Auth Password of Remote Write Prometheus Instance | undefined   |
 
 If `GRAPHITE_HOST` and `GRAPHITE_PORT` not provided by 'REVEAL USER PROVIDED ENV VARS' the sidecar tries to find this information in the `VCAP_SERVICES` environment variable, which will be automaticaly set if the app is binded to the `a9s-Prometheus` service.
-If both are not set the Sidecar supply will fail.
 
 ## Installation
 
