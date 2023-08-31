@@ -8,7 +8,7 @@ DEPS_IDX=$2
 echo "-----> Install $SIDECAR_NAME binaries"
 
 VERSION="1.20.4"
-URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
+#URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
 
 if [ $CF_STACK == "cflinuxfs3" ]; then
     SHA256="f27a8e4a395e5ad7fac7663400b9119b0b0ff77f3baf5e68fa944b40b5094fa4"
@@ -22,9 +22,11 @@ DepDir="$DEPS_DIR/$DEPS_IDX"
 InstallDir="$DepDir/telegraf"
 
 if [ ! -f $InstallDir/telegraf ]; then
-  
-  echo "-----> Download telegraf ${VERSION}"
-  curl -s -L --retry 15 --retry-delay 2 $URL -o /tmp/module.tar.gz
+
+  echo "-----> Copy telegraf ${VERSION}"
+  mv "$BUILDPACK_DIR/downloads/telegraf-1.20.4_linux_amd64.tar.gz" /tmp/module.tar.gz
+#  echo "-----> Download telegraf ${VERSION}"
+#  curl -s -L --retry 15 --retry-delay 2 $URL -o /tmp/module.tar.gz
 
   DOWNLOAD_SHA256=$(shasum -a 256 /tmp/module.tar.gz | cut -d ' ' -f 1)
 
