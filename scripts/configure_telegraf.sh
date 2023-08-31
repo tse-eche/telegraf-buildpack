@@ -8,7 +8,10 @@ DEPS_IDX=$2
 echo "-----> Configuring $SIDECAR_NAME Sidecar"
 
 TELEGRAF_CONF_FILE=$DEPS_DIR/$DEPS_IDX/telegraf/telegraf.conf
-NO_GRAPHITE="false";
+#NO_GRAPHITE="false";
+if [ -z ${NO_GRAPHITE+x} ];  then
+  NO_GRAPHITE="false";
+fi
 
 getOrganizationName()
 {
