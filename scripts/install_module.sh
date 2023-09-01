@@ -10,7 +10,7 @@ echo "-----> Install $SIDECAR_NAME binaries"
 VERSION="1.20.4"
 #URL="https://dl.influxdata.com/telegraf/releases/telegraf-${VERSION}_linux_amd64.tar.gz"
 
-if [ $CF_STACK == "cflinuxfs3" ]; then
+if [ "$CF_STACK" == "cflinuxfs3" ] || [ "$CF_STACK" == "cflinuxfs4" ] || [ -z "${CF_STACK+x}" ]; then
     SHA256="f27a8e4a395e5ad7fac7663400b9119b0b0ff77f3baf5e68fa944b40b5094fa4"
 else
   echo "       **ERROR** Unsupported stack"

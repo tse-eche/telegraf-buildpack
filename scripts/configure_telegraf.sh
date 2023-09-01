@@ -70,10 +70,7 @@ then
   export GRAPHITE_PORT=$(getGraphitePort)
 fi
 
-if [ ${GRAPHITE_HOST} == "null" ]; then
-  echo "       **ERROR** No Graphite configuration found in Services!"
-  echo "                 Please add the a9s_Prometheus Service to use this buildpack,"
-  echo "                 or define 'GRAPHITE_HOST' and 'GRAPHITE_PORT' as environment varaible!"
+if [ -z "${GRAPHITE_HOST}" ] || [ "${GRAPHITE_HOST}" = "null" ]; then
   NO_GRAPHITE="true";
 fi
 
