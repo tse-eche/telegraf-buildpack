@@ -8,7 +8,7 @@ DEPS_IDX=$2
 LAUNCH_CONTENTS='---
 processes:
 - type: "'$SIDECAR_NAME'"
-  command: "/home/vcap/deps/'$DEPS_IDX'/telegraf/telegraf --config /home/vcap/deps/'$DEPS_IDX'/telegraf/telegraf.conf"
+  command: "sleep 120; /home/vcap/deps/'$DEPS_IDX'/telegraf/telegraf --config /home/vcap/deps/'$DEPS_IDX'/telegraf/telegraf.conf"
   platforms:
     cloudfoundry:
       sidecar_for: [ "web" ]
